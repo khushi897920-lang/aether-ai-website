@@ -1,36 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aether AI | Enterprise AI Infrastructure Platform</title>
+    <title>Aether AI | Enterprise Intelligence For The Next Generation</title>
     
     <!-- CSS Architecture -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/pages.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Aether AI is an enterprise-grade AI infrastructure platform. Deploy secure, research-backed sovereign AI solutions designed for global scale.">
 </head>
 <body>
-    <!-- 
-      Aether AI - Home Page Template
-      Purpose: Displays company overview, key enterprise value propositions, capability cards, and metrics showcase.
-    -->
-    <header class="header-placeholder">
-        <!-- Sticky Navigation Header will go here -->
-    </header>
 
-    <main id="main-content">
-        <!-- Main landing page sections: Hero, stats, CTA will go here -->
+
+    <!-- Navigation Header -->
+    <nav class="nav-container" aria-label="Main Navigation">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" id="nav-logo-link">Aether AI</a>
+            
+            <div class="nav-links" id="desktop-nav-links">
+                <a href="index.html" class="nav-link active" id="nav-home">Home</a>
+                <a href="about.html" class="nav-link" id="nav-about">About</a>
+                <a href="services.html" class="nav-link" id="nav-services">Services</a>
+                <a href="contact.html" class="nav-link" id="nav-contact">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-md">
+                <a href="contact.html" class="btn-primary" id="nav-cta-btn">Request Demo</a>
+                
+                <!-- Hamburger Trigger for Mobile -->
+                <button class="hamburger" aria-label="Toggle menu" id="mobile-nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+
+    <!-- Mobile Navigation Drawer -->
+    <aside class="mobile-drawer" id="mobile-drawer-container">
+        <nav class="mobile-drawer-links" aria-label="Mobile Navigation">
+            <a href="index.html" class="mobile-drawer-link active" id="mob-nav-home">Home</a>
+            <a href="about.html" class="mobile-drawer-link" id="mob-nav-about">About</a>
+            <a href="services.html" class="mobile-drawer-link" id="mob-nav-services">Services</a>
+            <a href="contact.html" class="mobile-drawer-link" id="mob-nav-contact">Contact</a>
+        </nav>
+        <a href="contact.html" class="btn-primary" style="margin-top: auto; text-align: center;">Request Demo</a>
+    </aside>
+
+    <main class="page-main">
+        
+        <!-- Hero Section -->
+        <header class="home-hero container" id="home-hero-section">
+            <div class="grid grid-cols-12 gap-xl items-center">
+                <div class="col-span-6 flex flex-col gap-lg">
+                    <div class="inline-flex items-center gap-xs">
+                        <span class="mono-label-caps text-secondary">Enterprise Ready</span>
+                    </div>
+                    <h1 class="hero-headline text-ink carved-look">
+                        Enterprise AI Built For <span class="text-secondary">Real-World</span> Impact
+                    </h1>
+                    <p class="body-text-standard text-on-surface-variant" style="max-w: 540px;">
+                        Deploy secure, research-backed AI intelligence designed for global scale. Transform complex organizational data into sovereign decision power.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-lg mt-md">
+                        <a href="contact.html" class="btn-primary">
+                            Request Demo
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                        <a href="services.html" class="btn-secondary">Explore Platform</a>
+                    </div>
+                </div>
+                <div class="col-span-6 relative mt-xl">
+                    <div class="hero-media-wrapper">
+                        <img alt="Aether AI Sovereign Platform Control Interface Screenshot" class="w-full h-auto" src="assets/images/home/hero.png">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Trust Logo Section -->
+        <section class="section-padding border-y border-hairline bg-canvas" id="trust-logos-section">
+            <div class="container">
+                <p class="mono-label-caps text-center text-slate-technical mb-xxl opacity-60" style="letter-spacing: 0.2em;">Trusted By Forward-Thinking Organizations</p>
+                <div class="trust-logo-strip">
+                    <div class="trust-logo">NEXUS</div>
+                    <div class="trust-logo">QUANTUM</div>
+                    <div class="trust-logo">STRATA</div>
+                    <div class="trust-logo">CORE.SYS</div>
+                    <div class="trust-logo">VERTEX</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Capabilities Section -->
+        <section class="section-padding container" id="capabilities-section">
+            <div class="flex flex-col gap-md mb-xxl">
+                <span class="mono-label-caps text-secondary">Capabilities</span>
+                <h2 class="section-heading-standard text-ink carved-look">Intelligence Without Compromise</h2>
+            </div>
+            <div class="grid grid-cols-3 gap-lg">
+                
+                <!-- Capability Card 1 -->
+                <div class="capability-card" id="cap-agents">
+                    <div class="capability-icon text-secondary">
+                        <span class="material-symbols-outlined" style="font-size: 28px;">psychology</span>
+                    </div>
+                    <h3 class="feature-heading text-ink carved-look">AI Agents</h3>
+                    <p class="body-text-standard text-on-surface-variant">Autonomous entities that execute complex multi-step workflows with human-level reasoning and precision.</p>
+                    <a href="services.html" class="btn-secondary">
+                        Learn more 
+                        <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+                    </a>
+                </div>
+
+                <!-- Capability Card 2 -->
+                <div class="capability-card" id="cap-knowledge">
+                    <div class="capability-icon" style="color: var(--color-action-blue);">
+                        <span class="material-symbols-outlined" style="font-size: 28px;">hub</span>
+                    </div>
+                    <h3 class="feature-heading text-ink carved-look">Knowledge Intelligence</h3>
+                    <p class="body-text-standard text-on-surface-variant">Centralize unstructured data into a semantic knowledge graph accessible via natural language queries.</p>
+                    <a href="services.html" class="btn-secondary">
+                        Learn more 
+                        <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+                    </a>
+                </div>
+
+                <!-- Capability Card 3 -->
+                <div class="capability-card" id="cap-workflow">
+                    <div class="capability-icon text-primary">
+                        <span class="material-symbols-outlined" style="font-size: 28px;">auto_mode</span>
+                    </div>
+                    <h3 class="feature-heading text-ink carved-look">Workflow Automation</h3>
+                    <p class="body-text-standard text-on-surface-variant">Eliminate repetitive tasks with intelligent automation that adapts to your unique business logic.</p>
+                    <a href="services.html" class="btn-secondary">
+                        Learn more 
+                        <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+                    </a>
+                </div>
+
+                <!-- Capability Card 4 -->
+                <div class="capability-card" id="cap-security">
+                    <div class="capability-icon text-secondary">
+                        <span class="material-symbols-outlined" style="font-size: 28px;">shield_lock</span>
+                    </div>
+                    <h3 class="feature-heading text-ink carved-look">Secure AI Infrastructure</h3>
+                    <p class="body-text-standard text-on-surface-variant">Enterprise-grade security with SOC2 compliance and sovereign deployment options for sensitive data.</p>
+                    <a href="services.html" class="btn-secondary">
+                        Learn more 
+                        <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+                    </a>
+                </div>
+
+                <!-- Capability Card 5 -->
+                <div class="capability-card" id="cap-integrations">
+                    <div class="capability-icon" style="color: var(--color-action-blue);">
+                        <span class="material-symbols-outlined" style="font-size: 28px;">integration_instructions</span>
+                    </div>
+                    <h3 class="feature-heading text-ink carved-look">Enterprise Integrations</h3>
+                    <p class="body-text-standard text-on-surface-variant">Native connectors for SAP, Salesforce, Oracle, and internal legacy systems to bridge data silos.</p>
+                    <a href="services.html" class="btn-secondary">
+                        Learn more 
+                        <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+                    </a>
+                </div>
+
+                <!-- Capability Card 6 -->
+                <div class="capability-card" id="cap-analytics">
+                    <div class="capability-icon text-primary">
+                        <span class="material-symbols-outlined" style="font-size: 28px;">analytics</span>
+                    </div>
+                    <h3 class="feature-heading text-ink carved-look">Advanced Analytics</h3>
+                    <p class="body-text-standard text-on-surface-variant">Real-time performance tracking and impact metrics to measure the ROI of your AI initiatives.</p>
+                    <a href="services.html" class="btn-secondary">
+                        Learn more 
+                        <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dark Feature Band -->
+        <section class="dark-feature-band" id="infrastructure-claims-section">
+            <div class="container">
+                <div class="grid grid-cols-4 gap-xl">
+                    <div class="dark-feature-card">
+                        <span class="material-symbols-outlined">verified_user</span>
+                        <h4 class="feature-heading text-white carved-look">Security</h4>
+                        <p class="body-text-standard">Military-grade encryption and isolated tenant environments ensuring zero data leakage.</p>
+                    </div>
+                    <div class="dark-feature-card">
+                        <span class="material-symbols-outlined">speed</span>
+                        <h4 class="feature-heading text-white carved-look">Scalability</h4>
+                        <p class="body-text-standard">Architected for elastic processing across global cloud clusters or private datacenters.</p>
+                    </div>
+                    <div class="dark-feature-card">
+                        <span class="material-symbols-outlined">gavel</span>
+                        <h4 class="feature-heading text-white carved-look">Compliance</h4>
+                        <p class="body-text-standard">Automatic adherence to GDPR, HIPAA, and localized data residency requirements.</p>
+                    </div>
+                    <div class="dark-feature-card">
+                        <span class="material-symbols-outlined">monitoring</span>
+                        <h4 class="feature-heading text-white carved-look">Reliability</h4>
+                        <p class="body-text-standard">99.99% uptime SLA with real-time human-in-the-loop audit capabilities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="section-padding bg-surface-container-low border-b border-hairline" id="metrics-stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="flex flex-col gap-xs">
+                        <div class="section-heading-standard text-primary carved-look">500+</div>
+                        <div class="mono-label-caps text-slate-technical" style="font-size: 12px;">Organizations</div>
+                    </div>
+                    <div class="flex flex-col gap-xs">
+                        <div class="section-heading-standard text-primary carved-look">2M+</div>
+                        <div class="mono-label-caps text-slate-technical" style="font-size: 12px;">Workflows</div>
+                    </div>
+                    <div class="flex flex-col gap-xs">
+                        <div class="section-heading-standard text-primary carved-look">99.9%</div>
+                        <div class="mono-label-caps text-slate-technical" style="font-size: 12px;">Reliability</div>
+                    </div>
+                    <div class="flex flex-col gap-xs">
+                        <div class="section-heading-standard text-primary carved-look">40+</div>
+                        <div class="mono-label-caps text-slate-technical" style="font-size: 12px;">Countries</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Stories Section Placeholder -->
+        <!-- Matches the structure and vertical spacing exactly -->
+
+        <!-- Final CTA -->
+        <section class="section-padding container" id="final-cta-section">
+            <div class="home-cta-card">
+                <h2 class="section-heading-standard text-white carved-look" style="max-width: 800px; position: relative; z-index: 10;">
+                    Ready To Build AI Into Your Business?
+                </h2>
+                <p class="body-text-standard text-white opacity-70" style="max-width: 600px; position: relative; z-index: 10;">
+                    Join the elite organizations leveraging Aether AI to drive the next generation of industrial intelligence.
+                </p>
+                <div class="flex flex-wrap gap-lg mt-md justify-center" style="position: relative; z-index: 10; width: 100%;">
+                    <a href="contact.html" class="btn-primary" style="background-color: var(--color-canvas); color: var(--color-primary); padding: 16px 40px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);">Request Demo</a>
+                    <a href="contact.html" class="btn-pill-outline" style="border-color: rgba(255,255,255,0.4); color: var(--color-on-primary); padding: 16px 40px;">Contact Sales</a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="footer-placeholder">
-        <!-- Universal Dark Footer will go here -->
+    <!-- Footer -->
+    <footer class="border-t border-hairline bg-primary text-white py-xxl" aria-label="Footer Navigation" style="border-top-color: rgba(255,255,255,0.1);">
+        <div class="container">
+            <div class="grid grid-cols-4 gap-xl">
+                <div class="flex flex-col gap-md">
+                    <span class="nav-logo text-white" style="font-size: 24px; color: #ffffff;">Aether AI</span>
+                    <p class="body-text-standard text-muted-slate" style="max-width: 240px;">
+                        Enterprise Intelligence For The Next Generation Of Business.
+                    </p>
+                </div>
+                <div class="flex flex-col gap-md">
+                    <h5 class="mono-label-caps text-white font-bold" style="color: #ffffff;">Company</h5>
+                    <ul class="flex flex-col gap-sm" style="list-style: none;">
+                        <li><a href="about.html" class="body-text-standard text-muted-slate hover:text-white">About Us</a></li>
+                        <li><a href="about.html" class="body-text-standard text-muted-slate hover:text-white">Careers</a></li>
+                        <li><a href="about.html" class="body-text-standard text-muted-slate hover:text-white">Research</a></li>
+                        <li><a href="about.html" class="body-text-standard text-muted-slate hover:text-white">News</a></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-md">
+                    <h5 class="mono-label-caps text-white font-bold" style="color: #ffffff;">Services</h5>
+                    <ul class="flex flex-col gap-sm" style="list-style: none;">
+                        <li><a href="services.html" class="body-text-standard text-muted-slate hover:text-white">Enterprise Platform</a></li>
+                        <li><a href="services.html" class="body-text-standard text-muted-slate hover:text-white">AI Consulting</a></li>
+                        <li><a href="services.html" class="body-text-standard text-muted-slate hover:text-white">Integration</a></li>
+                        <li><a href="services.html" class="body-text-standard text-muted-slate hover:text-white">Custom Training</a></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-md">
+                    <h5 class="mono-label-caps text-white font-bold" style="color: #ffffff;">Resources</h5>
+                    <ul class="flex flex-col gap-sm" style="list-style: none;">
+                        <li><a href="services.html" class="body-text-standard text-muted-slate hover:text-white">Documentation</a></li>
+                        <li><a href="services.html" class="body-text-standard text-muted-slate hover:text-white">API Reference</a></li>
+                        <li><a href="about.html" class="body-text-standard text-muted-slate hover:text-white">Privacy Policy</a></li>
+                        <li><a href="about.html" class="body-text-standard text-muted-slate hover:text-white">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-4 gap-xl pt-xl mt-xxl border-t" style="border-top-color: rgba(255, 255, 255, 0.1);">
+                <div class="col-span-12 flex justify-between items-center gap-md">
+                    <p class="body-text text-micro text-muted-slate">© 2026 Aether AI. All rights reserved.</p>
+                    <div class="flex gap-xl" style="font-family: var(--font-body); font-size: 12px; color: var(--color-muted-slate);">
+                        <a href="about.html" class="hover:text-white">Privacy Policy</a>
+                        <a href="about.html" class="hover:text-white">Terms of Service</a>
+                        <a href="about.html" class="hover:text-white">Compliance</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- JavaScript Modules -->

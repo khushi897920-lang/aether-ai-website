@@ -1,23 +1,45 @@
 /* ==========================================================================
-   Aether AI - Base Styles (base.css)
-   Purpose: Holds design tokens (variables), font face imports, global body 
-            resets, scrollbars, and key accessibility focus-visible rings.
+   Aether AI - Base CSS (Variables, Reset, Fonts, and Core Styles)
    ========================================================================== */
 
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
 :root {
-    /* Color Tokens */
+    /* Color System (Cohere Design Standards) */
     --color-primary: #17171c;
+    --color-black: #000000;
+    --color-ink: #212121;
     --color-deep-green: #003c33;
-    --color-coral: #ff7759;
+    --color-solution-navy: #071829;
     --color-canvas: #ffffff;
     --color-soft-stone: #eeece7;
+    --color-pale-green: #edfce9;
+    --color-pale-blue: #f1f5ff;
     --color-hairline: #d9d9dd;
-    --color-slate-technical: #75758a;
-    --color-muted-slate: #93939f;
+    --color-border-light: #e5e7eb;
+    --color-card-border: #f2f2f2;
+    --color-muted: #93939f;
+    --color-slate: #75758a;
+    --color-body-muted: #616161;
+    --color-action-blue: #1863dc;
+    --color-focus-blue: #4c6ee6;
+    --color-coral: #ff7759;
+    --color-coral-soft: #ffad9b;
+    --color-form-focus: #9b60aa;
     --color-on-primary: #ffffff;
     --color-on-dark: #ffffff;
+    --color-error: #b30000;
+    --color-surface-container: #f0eee9;
+    --color-surface-container-low: #f5f3ee;
+    --color-surface-container-lowest: #ffffff;
+    --color-on-surface-variant: #47464b;
+    --color-on-background: #1b1c19;
+    --color-background: #ffffff;
 
     /* Spacing System */
+    --spacing-xxs: 2px;
     --spacing-xs: 6px;
     --spacing-sm: 8px;
     --spacing-md: 12px;
@@ -26,10 +48,111 @@
     --spacing-xxl: 32px;
     --spacing-section: 80px;
 
-    /* Typography scale */
-    --font-display: 'Hanken Grotesk', system-ui, sans-serif;
-    --font-body: 'Hanken Grotesk', system-ui, sans-serif;
+    /* Border Radius */
+    --radius-xs: 4px;
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 22px;
+    --radius-xl: 30px;
+    --radius-pill: 32px;
+    --radius-full: 9999px;
+
+    /* Font Families */
+    --font-display: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-body: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
+
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Add core baseline HTML resets here */
+/* Base Resets */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-ink);
+    background-color: var(--color-canvas);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-canvas);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-hairline);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-slate);
+}
+
+/* Image Reset */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Buttons Reset */
+button {
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    background: none;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Links Reset */
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+/* Accessibility Focus States */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--color-focus-blue);
+    outline-offset: 2px;
+}
+
+/* Hide focus rings if mouse is used, only show on keyboard tabs */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Material Icons Vertical Align */
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+    display: inline-block;
+}

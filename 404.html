@@ -1,36 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Node Not Found | Aether AI</title>
+    <title>404 Substrate Node Not Found | Aether AI</title>
     
     <!-- CSS Architecture -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/pages.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Substrate Node Not Found. The intelligence path you are trying to query does not exist or has been archived.">
 </head>
-<body>
-    <!-- 
-      Aether AI - 404 Node Not Found Page Template
-      Purpose: Standard fallback page displaying technical error node not found information and return path links.
-    -->
-    <header class="header-placeholder">
-        <!-- Navigation Header -->
-    </header>
+<body class="bg-surface text-ink">
 
-    <main id="main-content">
-        <!-- Error page content wrapper -->
+    <!-- Navigation Header -->
+    <nav class="nav-container" aria-label="Main Navigation">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" id="nav-logo-link">Aether AI</a>
+            
+            <div class="nav-links" id="desktop-nav-links">
+                <a href="index.html" class="nav-link" id="nav-home">Home</a>
+                <a href="about.html" class="nav-link" id="nav-about">About</a>
+                <a href="services.html" class="nav-link" id="nav-services">Services</a>
+                <a href="contact.html" class="nav-link" id="nav-contact">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-md">
+                <a href="contact.html" class="btn-primary" id="nav-cta-btn">Request Demo</a>
+                
+                <!-- Hamburger Trigger for Mobile -->
+                <button class="hamburger" aria-label="Toggle menu" id="mobile-nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+
+    <!-- Mobile Navigation Drawer -->
+    <aside class="mobile-drawer" id="mobile-drawer-container">
+        <nav class="mobile-drawer-links" aria-label="Mobile Navigation">
+            <a href="index.html" class="mobile-drawer-link" id="mob-nav-home">Home</a>
+            <a href="about.html" class="mobile-drawer-link" id="mob-nav-about">About</a>
+            <a href="services.html" class="mobile-drawer-link" id="mob-nav-services">Services</a>
+            <a href="contact.html" class="mobile-drawer-link" id="mob-nav-contact">Contact</a>
+        </nav>
+        <a href="contact.html" class="btn-primary" style="margin-top: auto; text-align: center;">Request Demo</a>
+    </aside>
+
+    <main class="page-main">
+        
+        <!-- Error Page Content -->
+        <section class="error-page-wrapper">
+            <div class="error-content">
+                <span class="mono-label text-slate-technical">ERROR CODE: 404</span>
+                <h1 class="error-title-huge text-primary">404</h1>
+                <h2 class="section-heading-standard text-primary tight-tracking">Substrate Node Not Found</h2>
+                <p class="body-text text-on-surface-variant" style="max-width: 480px; line-height: 1.6;">
+                    The intelligence path you are trying to query does not exist, has been relocated, or is restricted under sovereign protocols.
+                </p>
+                <div class="mt-lg">
+                    <a href="index.html" class="btn-primary" style="padding: 14px 32px;">
+                        Return to Substrate
+                        <span class="material-symbols-outlined">home</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="footer-placeholder">
-        <!-- Universal Dark Footer -->
+    <!-- Footer -->
+    <footer class="border-t border-hairline bg-primary text-white py-xxl" aria-label="Footer Navigation" style="border-top-color: rgba(255,255,255,0.1);">
+        <div class="container">
+            <div class="grid grid-cols-4 gap-xl">
+                <div class="flex flex-col gap-md">
+                    <span class="nav-logo text-white" style="font-size: 24px; color: #ffffff;">Aether AI</span>
+                    <p class="body-text text-muted-slate" style="max-width: 240px;">
+                        Enterprise Intelligence For The Next Generation Of Business.
+                    </p>
+                </div>
+                <div class="flex flex-col gap-md">
+                    <h5 class="mono-label text-white font-bold" style="color: #ffffff;">Company</h5>
+                    <ul class="flex flex-col gap-sm" style="list-style: none;">
+                        <li><a href="about.html" class="body-text text-muted-slate hover:text-white">Our Story</a></li>
+                        <li><a href="about.html" class="body-text text-muted-slate hover:text-white">Careers</a></li>
+                        <li><a href="about.html" class="body-text text-muted-slate hover:text-white">Press</a></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-md">
+                    <h5 class="mono-label text-white font-bold" style="color: #ffffff;">Resources</h5>
+                    <ul class="flex flex-col gap-sm" style="list-style: none;">
+                        <li><a href="services.html" class="body-text text-muted-slate hover:text-white">Research Labs</a></li>
+                        <li><a href="services.html" class="body-text text-muted-slate hover:text-white">Documentation</a></li>
+                        <li><a href="services.html" class="body-text text-muted-slate hover:text-white">API Status</a></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-md">
+                    <h5 class="mono-label text-white font-bold" style="color: #ffffff;">Contact</h5>
+                    <ul class="flex flex-col gap-sm" style="list-style: none;">
+                        <li><a href="contact.html" class="body-text text-muted-slate hover:text-white">Institutional Sales</a></li>
+                        <li><a href="contact.html" class="body-text text-muted-slate hover:text-white">Media Inquiry</a></li>
+                        <li><a href="contact.html" class="body-text text-muted-slate hover:text-white">General Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-4 gap-xl pt-xl mt-xxl border-t" style="border-top-color: rgba(255, 255, 255, 0.1);">
+                <div class="col-span-12 flex justify-between items-center gap-md">
+                    <p class="body-text text-micro text-muted-slate">© 2026 Aether AI. Enterprise Intelligence For The Next Generation.</p>
+                    <div class="flex gap-xl" style="font-family: var(--font-body); font-size: 12px; color: var(--color-muted-slate);">
+                        <a href="about.html" class="hover:text-white">Privacy Policy</a>
+                        <a href="about.html" class="hover:text-white">Terms of Service</a>
+                        <a href="about.html" class="hover:text-white">Ethics Charter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- JavaScript Modules -->

@@ -1,41 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Aether AI</title>
     
     <!-- CSS Architecture -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/pages.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Get in touch with Aether AI strategic units for enterprise implementation, partnerships, or custom research.">
 </head>
-<body>
-    <!-- 
-      Aether AI - Contact Page Template
-      Purpose: Displays inquiry channel list, interactive form validation, location detail cards, and newsletter section.
-    -->
-    <header class="header-placeholder">
-        <!-- Navigation Header -->
-    </header>
+<body class="bg-surface text-ink">
 
-    <main id="main-content">
-        <!-- Contact sections: Form grid, channel rows, location nodes will go here -->
+    <!-- Navigation Header -->
+    <nav class="nav-container" aria-label="Main Navigation">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" id="nav-logo-link">Aether AI</a>
+            
+            <div class="nav-links" id="desktop-nav-links">
+                <a href="index.html" class="nav-link" id="nav-home">Home</a>
+                <a href="about.html" class="nav-link" id="nav-about">About</a>
+                <a href="services.html" class="nav-link" id="nav-services">Services</a>
+                <a href="contact.html" class="nav-link active" id="nav-contact">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-md">
+                <a href="contact.html" class="btn-primary" id="nav-cta-btn">Request Demo</a>
+                
+                <!-- Hamburger Trigger for Mobile -->
+                <button class="hamburger" aria-label="Toggle menu" id="mobile-nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+
+    <!-- Mobile Navigation Drawer -->
+    <aside class="mobile-drawer" id="mobile-drawer-container">
+        <nav class="mobile-drawer-links" aria-label="Mobile Navigation">
+            <a href="index.html" class="mobile-drawer-link" id="mob-nav-home">Home</a>
+            <a href="about.html" class="mobile-drawer-link" id="mob-nav-about">About</a>
+            <a href="services.html" class="mobile-drawer-link" id="mob-nav-services">Services</a>
+            <a href="contact.html" class="mobile-drawer-link active" id="mob-nav-contact">Contact</a>
+        </nav>
+        <a href="contact.html" class="btn-primary" style="margin-top: auto; text-align: center;">Request Demo</a>
+    </aside>
+
+    <main class="page-main">
+        
+        <!-- Hero Section -->
+        <section class="section container">
+            <span class="mono-label text-muted-slate mb-md block">Connection Points</span>
+            <h1 class="hero-headline max-w-4xl mb-xl">Let's Build The Future Together</h1>
+            <p class="body-large text-muted-slate max-w-2xl">Connect with our specialized research units to integrate enterprise-grade intelligence into your strategic core. We respond within 24 business hours.</p>
+        </section>
+
+        <!-- Form & Content Section -->
+        <section class="bg-surface-container-low py-section">
+            <div class="container grid grid-cols-12 gap-xxl items-start">
+                
+                <!-- Info Column (col-span-5) -->
+                <div class="col-span-5 flex flex-col gap-xxl" style="gap: var(--spacing-xxl);">
+                    <div>
+                        <h2 class="card-heading mb-xl" style="font-weight: 400; line-height: 1.2;">Contact Channels</h2>
+                        <div class="flex flex-col">
+                            <div class="contact-channel-row">
+                                <span class="mono-label text-ink">General Inquiries</span>
+                                <span class="body-text text-ink">hello@aetherai.com</span>
+                            </div>
+                            <div class="contact-channel-row">
+                                <span class="mono-label text-ink">Press &amp; Media</span>
+                                <span class="body-text text-ink">press@aetherai.com</span>
+                            </div>
+                            <div class="contact-channel-row">
+                                <span class="mono-label text-ink">Partnerships</span>
+                                <span class="body-text text-ink">allies@aetherai.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-xl rounded-xl border border-light shadow-sm flex flex-col gap-md">
+                        <p class="body-text text-muted-slate" style="line-height: 1.6;">Looking for immediate technical support? Existing enterprise clients should use their dedicated portal for 24/7 priority assistance.</p>
+                        <button class="font-bold text-primary border-b border-primary pb-xxs hover:opacity-70 transition-opacity" style="align-self: flex-start;">Access Client Portal</button>
+                    </div>
+                </div>
+
+                <!-- Form Card (col-span-7) -->
+                <div class="col-span-7 bg-white p-xl rounded-xl border border-light shadow-sm" style="padding: 48px;">
+                    <form action="#" class="contact-form-grid" method="POST" novalidate id="contact-enterprise-form">
+                        
+                        <!-- Full Name -->
+                        <div class="form-group">
+                            <label class="form-label">Full Name</label>
+                            <input class="form-input" placeholder="Jane Cooper" type="text" id="form-name" required>
+                        </div>
+                        
+                        <!-- Company -->
+                        <div class="form-group">
+                            <label class="form-label">Company</label>
+                            <input class="form-input" placeholder="Intelligence Corp" type="text" id="form-company">
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label class="form-label">Email Address</label>
+                            <input class="form-input" placeholder="jane@example.com" type="email" id="form-email" required>
+                        </div>
+                        
+                        <!-- Phone -->
+                        <div class="form-group">
+                            <label class="form-label">Phone Number</label>
+                            <input class="form-input" placeholder="+1 (555) 000-0000" type="tel" id="form-phone">
+                        </div>
+                        
+                        <!-- Subject -->
+                        <div class="form-group col-span-2">
+                            <label class="form-label">Subject</label>
+                            <div class="relative">
+                                <select class="form-select" id="form-subject">
+                                    <option>Enterprise Implementation</option>
+                                    <option>Custom Research Project</option>
+                                    <option>Strategic Partnership</option>
+                                    <option>General Inquiry</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Message -->
+                        <div class="form-group col-span-2">
+                            <label class="form-label">Your Message</label>
+                            <textarea class="form-textarea" placeholder="How can we assist your next leap in intelligence?" rows="5" id="form-message" required></textarea>
+                        </div>
+                        
+                        <!-- Submit -->
+                        <div class="col-span-2 mt-md">
+                            <button class="btn-primary w-full md:w-auto" style="padding: 16px 64px;" type="submit" id="form-submit-btn">
+                                Submit Request
+                                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Locations Section -->
+        <section class="section container">
+            <div class="grid grid-cols-4 gap-xl">
+                <div class="location-card">
+                    <span class="mono-label text-muted-slate text-[12px] block">North America</span>
+                    <h4 class="feature-heading text-ink font-bold">San Francisco</h4>
+                    <p class="body-text text-muted-slate">424 Spear St,<br>San Francisco, CA 94105</p>
+                </div>
+                <div class="location-card">
+                    <span class="mono-label text-muted-slate text-[12px] block">Europe</span>
+                    <h4 class="feature-heading text-ink font-bold">London</h4>
+                    <p class="body-text text-muted-slate">10 York Rd,<br>London SE1 7ND, UK</p>
+                </div>
+                <div class="location-card">
+                    <span class="mono-label text-muted-slate text-[12px] block">North America</span>
+                    <h4 class="feature-heading text-ink font-bold">Toronto</h4>
+                    <p class="body-text text-muted-slate">175 Bloor St E,<br>Toronto, ON M4W 3R8</p>
+                </div>
+                <div class="location-card" style="border-bottom: none;">
+                    <span class="mono-label text-muted-slate text-[12px] block">Asia Pacific</span>
+                    <h4 class="feature-heading text-ink font-bold">Singapore</h4>
+                    <p class="body-text text-muted-slate">182 Cecil St,<br>Frasers Tower, Singapore</p>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <!-- Isolated Newsletter Banner -->
-    <section class="newsletter-placeholder">
-        <!-- Green Newsletter sign up section will go here -->
+    <!-- Newsletter Section -->
+    <section class="section-padding bg-deep-green text-white" id="newsletter-section" style="border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+        <div class="container">
+            <div class="grid grid-cols-2 gap-xl items-end">
+                <div class="flex flex-col gap-md">
+                    <span class="mono-label text-coral" style="color: var(--color-coral);">AI moves fast</span>
+                    <h3 class="card-heading" style="font-size: 32px; font-weight: 400; line-height: 1.2; letter-spacing: -0.32px;">Get the latest research and product updates.</h3>
+                </div>
+                <div class="flex flex-col">
+                    <form class="footer-newsletter-form bg-deep-green" id="footer-newsletter">
+                        <input class="footer-newsletter-input" placeholder="Email address" type="email" required>
+                        <button class="footer-newsletter-btn" type="submit" aria-label="Subscribe">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                    </form>
+                    <p class="body-text" style="font-size: 12px; margin-top: var(--spacing-md); color: rgba(255, 255, 255, 0.7);">By subscribing, you agree to our Terms of Service and Privacy Policy.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer class="footer-placeholder">
-        <!-- Universal Dark Footer -->
+    <!-- Footer -->
+    <footer class="border-t border-hairline bg-primary text-white py-xxl" aria-label="Footer Navigation" style="border-top-color: rgba(255,255,255,0.1);">
+        <div class="container">
+            
+            <!-- Footer columns -->
+            <div class="grid grid-cols-4 gap-xl">
+                <div class="flex flex-col gap-md">
+                    <span class="nav-logo text-white" style="font-size: 24px; color: #ffffff;">Aether AI</span>
+                    <p class="body-text text-muted-slate" style="max-width: 240px;">
+                        Enterprise Intelligence For The Next Generation Of Business.
+                    </p>
+                </div>
+                <div class="flex flex-col gap-md">
+                    <h5 class="mono-label text-white font-bold" style="color: #ffffff;">Organization</h5>
+                    <ul class="flex flex-col gap-sm" style="list-style: none;">
+                        <li><a href="about.html" class="body-text text-muted-slate hover:text-white">Our Ethos</a></li>
+                        <li><a href="about.html" class="body-text text-muted-slate hover:text-white">Strategic Units</a></li>
+                        <li><a href="about.html" class="body-text text-muted-slate hover:text-white">Research Archive</a></li>
+                        <li><a href="about.html" class="body-text text-muted-slate hover:text-white">Security Core</a></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-md">
+                    <h5 class="mono-label text-white font-bold" style="color: #ffffff;">Legal</h5>
+                    <ul class="flex flex-col gap-sm" style="list-style: none;">
+                        <li><a href="about.html" class="body-text text-muted-slate hover:text-white">Data Privacy</a></li>
+                        <li><a href="about.html" class="body-text text-muted-slate hover:text-white">Service Terms</a></li>
+                        <li><a href="about.html" class="body-text text-muted-slate hover:text-white">Ethics Policy</a></li>
+                        <li><a href="about.html" class="body-text text-muted-slate hover:text-white">Disclosure</a></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-md">
+                    <h5 class="mono-label text-white font-bold" style="color: #ffffff;">Social Presence</h5>
+                    <ul class="flex flex-col gap-sm" style="list-style: none;">
+                        <li><a href="#" class="body-text text-muted-slate hover:text-white">Twitter / X</a></li>
+                        <li><a href="#" class="body-text text-muted-slate hover:text-white">LinkedIn</a></li>
+                        <li><a href="#" class="body-text text-muted-slate hover:text-white">GitHub</a></li>
+                        <li><a href="#" class="body-text text-muted-slate hover:text-white">Medium</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-4 gap-xl pt-xl mt-xxl border-t" style="border-top-color: rgba(255, 255, 255, 0.1);">
+                <div class="col-span-12 flex justify-between items-center gap-md">
+                    <p class="body-text text-micro text-muted-slate">© 2026 Aether AI. Enterprise Intelligence For The Next Generation.</p>
+                    <div class="flex gap-xl" style="font-family: var(--font-body); font-size: 12px; color: var(--color-muted-slate);">
+                        <a href="about.html" class="hover:text-white">Privacy Policy</a>
+                        <a href="about.html" class="hover:text-white">Terms of Service</a>
+                        <a href="about.html" class="hover:text-white">Ethics Charter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- JavaScript Modules -->

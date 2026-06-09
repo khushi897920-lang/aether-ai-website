@@ -1,0 +1,30 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    path.left-wing {
+      fill: #17171c;
+      transition: fill 0.3s ease;
+    }
+    path.right-wing {
+      fill: #3a3a42;
+      transition: fill 0.3s ease;
+    }
+    circle.core {
+      fill: #ff7759;
+      transition: fill 0.3s ease;
+    }
+    @media (prefers-color-scheme: dark) {
+      path.left-wing {
+        fill: #ffffff;
+      }
+      path.right-wing {
+        fill: #d1d1d6;
+      }
+    }
+  </style>
+  <!-- Left wing of premium 3D geometric 'A' -->
+  <path class="left-wing" d="M50 15 L15 85 H38 L50 48 Z"/>
+  <!-- Right wing with subtle shadow gradient for depth -->
+  <path class="right-wing" d="M50 15 L85 85 H62 L50 48 Z"/>
+  <!-- Glowing central intelligence node -->
+  <circle class="core" cx="50" cy="64" r="7"/>
+</svg>

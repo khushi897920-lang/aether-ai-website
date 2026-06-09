@@ -1,7 +1,182 @@
 /* ==========================================================================
-   Aether AI - Responsiveness and Media Queries (responsive.css)
-   Purpose: Global viewport threshold break definitions (desktop, tablet, mobile).
-            Controls stacking behaviors and text scaling for visual comfort.
+   Aether AI - Responsive CSS (Breakpoints and Mobile Adjustments)
    ========================================================================== */
 
-/* Add media query overrides here */
+/* 1. Large Desktops / Wide Layouts */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1440px;
+    }
+}
+
+/* 2. Desktop Transitions (under 1024px) */
+@media (max-width: 1024px) {
+    .nav-links {
+        display: none; /* Collapses on tablet/mobile */
+    }
+
+    .hamburger {
+        display: flex; /* Shows on tablet/mobile */
+    }
+
+    .hero-headline,
+    .hero-display {
+        font-size: 72px;
+        letter-spacing: -1.44px;
+    }
+
+    .product-display {
+        font-size: 56px;
+        letter-spacing: -1px;
+    }
+
+    .section-display {
+        font-size: 48px;
+        letter-spacing: -0.8px;
+    }
+}
+
+/* 3. Tablets (under 768px) */
+@media (max-width: 768px) {
+    /* Section Padding Adjustments */
+    :root {
+        --spacing-section: 60px;
+    }
+
+    /* Grid Collapsing */
+    .grid-cols-2,
+    .grid-cols-3,
+    .grid-cols-4,
+    .grid-cols-12 {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    /* Custom col spans collapse */
+    .col-span-1, .col-span-2, .col-span-3, .col-span-4, .col-span-5,
+    .col-span-6, .col-span-7, .col-span-8, .col-span-9, .col-span-10,
+    .col-span-11, .col-span-12 {
+        grid-column: span 1 / span 1;
+    }
+
+    /* Header Padding & Spacing */
+    main.page-main {
+        padding-top: 72px;
+    }
+
+    .home-hero {
+        padding-top: 60px;
+    }
+
+    /* Typography Scale Down */
+    .hero-headline,
+    .hero-display {
+        font-size: 48px;
+        letter-spacing: -0.96px;
+        line-height: 1.1;
+    }
+
+    .section-heading-standard,
+    .section-heading {
+        font-size: 32px;
+        letter-spacing: -0.32px;
+        line-height: 1.25;
+    }
+
+    .card-heading {
+        font-size: 24px;
+        letter-spacing: -0.2px;
+    }
+
+    .feature-heading {
+        font-size: 20px;
+    }
+
+    /* Element Stacking Adjustments */
+    .flex-row-mobile-stack {
+        flex-direction: column;
+    }
+
+    /* home cta card adjustments */
+    .home-cta-card {
+        padding: var(--spacing-xl) var(--spacing-lg);
+    }
+
+    .home-cta-card .flex {
+        flex-direction: column;
+        width: 100%;
+        gap: var(--spacing-md);
+    }
+
+    .home-cta-card .flex button {
+        width: 100%;
+    }
+
+    /* Footer layouts */
+    footer {
+        padding-top: var(--spacing-xl);
+        padding-bottom: var(--spacing-xl);
+    }
+
+    /* 5. Process Section Mobile Responsiveness */
+    .process-grid .sticky-top {
+        position: relative !important;
+        top: 0 !important;
+    }
+    
+    .process-grid {
+        gap: var(--spacing-xxl) !important;
+    }
+    
+    .process-grid .sticky-top p.body-large {
+        margin-top: var(--spacing-xl) !important;
+    }
+    
+    .process-step {
+        flex-direction: column !important;
+        gap: var(--spacing-md) !important;
+        padding-top: var(--spacing-xl) !important;
+        padding-bottom: var(--spacing-xl) !important;
+    }
+}
+
+/* 4. Small Mobile (under 425px) */
+@media (max-width: 425px) {
+    .hero-headline,
+    .hero-display {
+        font-size: 38px;
+        letter-spacing: -0.76px;
+    }
+
+    .section-heading-standard,
+    .section-heading {
+        font-size: 28px;
+        letter-spacing: -0.28px;
+    }
+
+    .nav-inner {
+        padding: var(--spacing-md) var(--spacing-md);
+    }
+}
+
+/* Accessibility: Reduced Motion overrides */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto !important;
+    }
+    
+    * {
+        animation-delay: 0s !important;
+        animation-duration: 0s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0s !important;
+        scroll-behavior: auto !important;
+    }
+
+    .service-card, .service-card *,
+    .product-card, .product-card *,
+    .dark-feature-card, .dark-feature-card *,
+    .capability-card, .capability-card * {
+        transform: none !important;
+        transition: none !important;
+    }
+}

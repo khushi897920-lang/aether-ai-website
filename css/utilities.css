@@ -1,7 +1,211 @@
 /* ==========================================================================
-   Aether AI - Utility Helpers (utilities.css)
-   Purpose: Helper classes for immediate text color highlights, backgrounds, 
-            shadow depth presets, opacity overlays, and margin-top shifts.
+   Aether AI - Utilities CSS (Typography, Colors, Spacing, and Helpers)
    ========================================================================== */
 
-/* Add helper utility classes here */
+/* Typography Classes */
+.hero-headline,
+.hero-display {
+    font-family: var(--font-display);
+    font-size: 96px;
+    font-weight: 400;
+    line-height: 1.0;
+    letter-spacing: -1.92px;
+}
+
+.product-display {
+    font-family: var(--font-display);
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 1.0;
+    letter-spacing: -1.44px;
+}
+
+.section-display {
+    font-family: var(--font-display);
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 1.0;
+    letter-spacing: -1.2px;
+}
+
+.section-heading-standard,
+.section-heading {
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.48px;
+}
+
+.card-heading {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.32px;
+}
+
+.feature-heading {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: 0;
+}
+
+.body-large {
+    font-family: var(--font-body);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.body-text-standard,
+.body-text {
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.caption {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.mono-label-caps,
+.mono-label {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.28px;
+}
+
+.micro {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.font-bold { font-weight: 700; }
+.font-medium { font-weight: 500; }
+.font-normal { font-weight: 400; }
+.tight-tracking { letter-spacing: -0.02em; }
+.carved-look { letter-spacing: -0.04em; }
+
+/* Color Utilities */
+.bg-primary { background-color: var(--color-primary); }
+.bg-black { background-color: var(--color-black); }
+.bg-canvas { background-color: var(--color-canvas); }
+.bg-deep-green { background-color: var(--color-deep-green); }
+.bg-solution-navy { background-color: var(--color-solution-navy); }
+.bg-soft-stone { background-color: var(--color-soft-stone); }
+.bg-pale-green { background-color: var(--color-pale-green); }
+.bg-pale-blue { background-color: var(--color-pale-blue); }
+.bg-surface-container-low { background-color: var(--color-surface-container-low); }
+.bg-surface-container-lowest { background-color: var(--color-surface-container-lowest); }
+
+.text-ink { color: var(--color-ink); }
+.text-primary { color: var(--color-primary); }
+.text-white { color: var(--color-on-primary); }
+.text-secondary { color: var(--color-deep-green); }
+.text-slate-technical,
+.text-slate { color: var(--color-slate); }
+.text-muted,
+.text-muted-slate { color: var(--color-muted); }
+.text-on-surface-variant { color: var(--color-on-surface-variant); }
+.text-coral { color: var(--color-coral); }
+
+/* Border Utilities */
+.border-t { border-top: 1px solid var(--color-hairline); }
+.border-b { border-bottom: 1px solid var(--color-hairline); }
+.border-y {
+    border-top: 1px solid var(--color-hairline);
+    border-bottom: 1px solid var(--color-hairline);
+}
+.border-all { border: 1px solid var(--color-hairline); }
+.border-light { border-color: var(--color-border-light); }
+.border-hairline { border-color: var(--color-hairline); }
+
+/* Spacing Helpers */
+.mt-xs { margin-top: var(--spacing-xs); }
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+.mt-xl { margin-top: var(--spacing-xl); }
+.mt-xxl { margin-top: var(--spacing-xxl); }
+
+.mb-xs { margin-bottom: var(--spacing-xs); }
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+.mb-xl { margin-bottom: var(--spacing-xl); }
+.mb-xxl { margin-bottom: var(--spacing-xxl); }
+
+.ml-xs { margin-left: var(--spacing-xs); }
+.ml-sm { margin-left: var(--spacing-sm); }
+.ml-md { margin-left: var(--spacing-md); }
+
+.p-md { padding: var(--spacing-md); }
+.p-lg { padding: var(--spacing-lg); }
+.p-xl { padding: var(--spacing-xl); }
+.p-xxl { padding: var(--spacing-xxl); }
+
+.py-xs { padding-top: var(--spacing-xs); padding-bottom: var(--spacing-xs); }
+.py-sm { padding-top: var(--spacing-sm); padding-bottom: var(--spacing-sm); }
+.py-md { padding-top: var(--spacing-md); padding-bottom: var(--spacing-md); }
+.py-lg { padding-top: var(--spacing-lg); padding-bottom: var(--spacing-lg); }
+.py-xl { padding-top: var(--spacing-xl); padding-bottom: var(--spacing-xl); }
+.py-xxl { padding-top: var(--spacing-xxl); padding-bottom: var(--spacing-xxl); }
+
+.px-sm { padding-left: var(--spacing-sm); padding-right: var(--spacing-sm); }
+.px-md { padding-left: var(--spacing-md); padding-right: var(--spacing-md); }
+.px-lg { padding-left: var(--spacing-lg); padding-right: var(--spacing-lg); }
+.px-xl { padding-left: var(--spacing-xl); padding-right: var(--spacing-xl); }
+.px-xxl { padding-left: var(--spacing-xxl); padding-right: var(--spacing-xxl); }
+
+.block { display: block; }
+.inline-block { display: inline-block; }
+.inline-flex { display: inline-flex; }
+.hidden { display: none; }
+
+.opacity-30 { opacity: 0.3; }
+.opacity-60 { opacity: 0.6; }
+.opacity-70 { opacity: 0.7; }
+.opacity-80 { opacity: 0.8; }
+
+.shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
+.shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+.shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+.shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+
+/* Border Radius Helpers */
+.rounded-xs { border-radius: var(--radius-xs); }
+.rounded-sm { border-radius: var(--radius-sm); }
+.rounded-md { border-radius: var(--radius-md); }
+.rounded-lg { border-radius: var(--radius-lg); }
+.rounded-xl { border-radius: var(--radius-xl); }
+.rounded-pill { border-radius: var(--radius-pill); }
+.rounded-full { border-radius: var(--radius-full); }
+
+/* Alignment and Position */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.relative { position: relative; }
+.overflow-hidden { overflow: hidden; }
+
+/* Transition class */
+.transition-all { transition: all var(--transition-normal); }
+.transition-colors { transition: color var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast); }
+.hover-translate:hover {
+    transform: translateY(-4px);
+}

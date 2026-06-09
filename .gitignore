@@ -1,3 +1,6 @@
+# Deployment
+.vercel/
+
 # Dependency directories
 node_modules/
 

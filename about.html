@@ -1,36 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Aether AI</title>
     
     <!-- CSS Architecture -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/pages.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Learn about Aether AI, our technical leadership, ethical mission, and neural research substrate nodes.">
 </head>
-<body>
-    <!-- 
-      Aether AI - About Page Template
-      Purpose: Introduces the company mission, technical team, research vision, and values.
-    -->
-    <header class="header-placeholder">
-        <!-- Navigation Header -->
-    </header>
+<body class="bg-surface text-ink">
 
-    <main id="main-content">
-        <!-- About sections: Story, Leadership Node Grid will go here -->
+    <!-- Navigation Header -->
+    <nav class="nav-container" aria-label="Main Navigation">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" id="nav-logo-link">Aether AI</a>
+            
+            <div class="nav-links" id="desktop-nav-links">
+                <a href="index.html" class="nav-link" id="nav-home">Home</a>
+                <a href="about.html" class="nav-link active" id="nav-about">About</a>
+                <a href="services.html" class="nav-link" id="nav-services">Services</a>
+                <a href="contact.html" class="nav-link" id="nav-contact">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-md">
+                <a href="contact.html" class="btn-primary" id="nav-cta-btn">Request Demo</a>
+                
+                <!-- Hamburger Trigger for Mobile -->
+                <button class="hamburger" aria-label="Toggle menu" id="mobile-nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+
+    <!-- Mobile Navigation Drawer -->
+    <aside class="mobile-drawer" id="mobile-drawer-container">
+        <nav class="mobile-drawer-links" aria-label="Mobile Navigation">
+            <a href="index.html" class="mobile-drawer-link" id="mob-nav-home">Home</a>
+            <a href="about.html" class="mobile-drawer-link active" id="mob-nav-about">About</a>
+            <a href="services.html" class="mobile-drawer-link" id="mob-nav-services">Services</a>
+            <a href="contact.html" class="mobile-drawer-link" id="mob-nav-contact">Contact</a>
+        </nav>
+        <a href="contact.html" class="btn-primary" style="margin-top: auto; text-align: center;">Request Demo</a>
+    </aside>
+
+    <main class="page-main">
+        
+        <!-- Hero Section -->
+        <header class="about-hero container">
+            <div style="max-width: 800px;">
+                <span class="mono-label text-slate-technical mb-md block">INSTITUTIONAL PROFILE</span>
+                <h1 class="hero-headline text-primary mb-xl tight-tracking">Building Responsible Enterprise Intelligence</h1>
+                <p class="body-large text-on-surface-variant" style="max-width: 640px;">
+                    Aether AI is an elite research and development firm dedicated to the seamless integration of transformative intelligence within global enterprise frameworks.
+                </p>
+            </div>
+        </header>
+
+        <!-- Company Story (Editorial Layout) -->
+        <section class="section-padding bg-surface-container-low overflow-hidden">
+            <div class="container">
+                <div class="grid grid-cols-12 gap-xxl items-start">
+                    <div class="col-span-12 mb-xxl">
+                        <span class="mono-label text-secondary mb-md block uppercase tracking-[0.28px]">EST. 2021 // RESEARCH FOUNDATION</span>
+                        <h2 class="hero-headline text-primary tight-tracking" style="max-width: 1000px;">A Legacy of Technical Precision.</h2>
+                    </div>
+                    <div class="col-span-5 flex flex-col gap-lg" style="gap: var(--spacing-lg);">
+                        <p class="body-text text-ink" style="line-height: 1.6;">
+                            Founded at the intersection of academic rigor and industrial necessity, Aether AI emerged as a response to the growing fragmentation of enterprise data systems. We believe that intelligence is not a feature to be added, but a substrate to be cultivated through unwavering technical discipline.
+                        </p>
+                        <p class="body-text text-ink" style="line-height: 1.6;">
+                            Our journey began with a singular focus: to bridge the gap between high-level generative capabilities and the rigid, high-stakes requirements of global business infrastructure. Today, we serve as the primary intelligence layer for the world's most resilient organizations.
+                        </p>
+                    </div>
+                    <div class="col-span-7">
+                        <img alt="Modern minimalist architectural interior of a high-tech research lab foundry" class="w-full rounded-xl border border-hairline shadow-sm" style="aspect-ratio: 16/9; object-fit: cover; filter: grayscale(100%); transition: filter var(--transition-slow);" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(100%)'" src="assets/images/about/story.png">
+                        <div class="mt-md flex justify-between">
+                            <span class="mono-label text-micro text-slate-technical">NEURAL FOUNDRY RESEARCH FACILITY</span>
+                            <span class="mono-label text-micro text-slate-technical">REF: 09-AF-21</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision -->
+        <section class="section-padding container">
+            <div class="grid grid-cols-2 gap-xl">
+                
+                <!-- Mission Card -->
+                <div class="p-xxl border border-hairline rounded-xl bg-surface-container-lowest flex flex-col justify-between" style="min-height: 280px; transition: transform var(--transition-normal), box-shadow var(--transition-normal);" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 20px 25px -5px rgba(0,0,0,0.05)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                    <div>
+                        <span class="mono-label text-secondary mb-md block uppercase tracking-[0.28px]">01 / MISSION</span>
+                        <h3 class="card-heading text-primary mb-lg tight-tracking">To provide a stable, ethical foundation for enterprise-scale AI deployment.</h3>
+                    </div>
+                    <p class="body-text text-on-surface-variant">We prioritize data sovereignty and operational safety over rapid expansion, ensuring our partners remain in total control of their intellectual assets.</p>
+                </div>
+
+                <!-- Vision Card -->
+                <div class="p-xxl border border-hairline rounded-xl bg-surface-container-lowest flex flex-col justify-between" style="min-height: 280px; transition: transform var(--transition-normal), box-shadow var(--transition-normal);" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 20px 25px -5px rgba(0,0,0,0.05)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                    <div>
+                        <span class="mono-label" style="color: var(--color-action-blue); margin-bottom: var(--spacing-md); display: block; text-transform: uppercase; letter-spacing: 0.28px;">02 / VISION</span>
+                        <h3 class="card-heading text-primary mb-lg tight-tracking">A world where human ingenuity is amplified by invisible, ubiquitous intelligence.</h3>
+                    </div>
+                    <p class="body-text text-on-surface-variant">We envision the enterprise of the future as a living organism, capable of autonomous optimization through our integrated neural fabric.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Leadership -->
+        <section class="section-padding bg-surface-container-low">
+            <div class="container">
+                <div class="mb-xxl">
+                    <span class="mono-label text-slate-technical mb-md block tracking-[0.28px]">ORGANIZATIONAL STRUCTURE</span>
+                    <h2 class="section-heading text-primary tight-tracking">Technical Leadership</h2>
+                    <p class="body-large text-on-surface-variant mt-lg" style="max-width: 640px;">Aether AI is governed by a distributed network of specialized research units and cognitive nodes.</p>
+                </div>
+                
+                <div class="leadership-grid">
+                    
+                    <!-- Node 01 -->
+                    <div class="group flex flex-col gap-lg">
+                        <div class="leader-node-img">
+                            <img alt="Substrate Core Visual Renders" src="assets/images/about/node01.png">
+                        </div>
+                        <div class="flex flex-col gap-sm">
+                            <span class="mono-label text-secondary uppercase block tracking-[0.28px]">NODE_01 // CORE ARCHITECTURE</span>
+                            <h4 class="feature-heading text-primary">Neural Substrate Unit</h4>
+                            <p class="body-text text-on-surface-variant" style="line-height: 1.6;">Responsible for the fundamental mathematical frameworks and weight-optimization protocols that power Aether's primary LLM deployments.</p>
+                        </div>
+                    </div>
+
+                    <!-- Node 02 -->
+                    <div class="group flex flex-col gap-lg">
+                        <div class="leader-node-img">
+                            <img alt="Sovereign Network Mesh Visual Renders" src="assets/images/about/node02.png">
+                        </div>
+                        <div class="flex flex-col gap-sm">
+                            <span class="mono-label text-secondary uppercase block tracking-[0.28px]">NODE_02 // SECURITY & PRIVACY</span>
+                            <h4 class="feature-heading text-primary">Zero-Knowledge Mesh</h4>
+                            <p class="body-text text-on-surface-variant" style="line-height: 1.6;">Dedicated to sovereign data residency and multi-party computation protocols, ensuring model training occurs without exposing raw enterprise data.</p>
+                        </div>
+                    </div>
+
+                    <!-- Node 03 -->
+                    <div class="group flex flex-col gap-lg">
+                        <div class="leader-node-img">
+                            <img alt="Ethics Substrate Mesh Visual Renders" src="assets/images/about/node03.png">
+                        </div>
+                        <div class="flex flex-col gap-sm">
+                            <span class="mono-label text-secondary uppercase block tracking-[0.28px]">NODE_03 // ETHICS & ALIGNMENT</span>
+                            <h4 class="feature-heading text-primary">Alignment Oversight Hub</h4>
+                            <p class="body-text text-on-surface-variant" style="line-height: 1.6;">Monitoring real-time deployment metrics to maintain strict adherence to Aether's Institutional Ethics Charter and safety guardrails.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Principles -->
+        <section class="section-padding bg-primary text-white">
+            <div class="container">
+                <h2 class="section-heading mb-xxl tight-tracking">Core Principles</h2>
+                <div class="grid grid-cols-3 gap-xl">
+                    <div class="flex flex-col gap-md p-lg border rounded-xl" style="border-color: rgba(255,255,255,0.1); transition: background-color var(--transition-fast);" onmouseover="this.style.backgroundColor='rgba(255,255,255,0.05)'" onmouseout="this.style.backgroundColor='transparent'">
+                        <span class="material-symbols-outlined text-secondary-fixed-dim text-4xl" style="color: var(--color-coral-soft); font-size: 36px;">security</span>
+                        <h4 class="feature-heading">Integrity First</h4>
+                        <p class="body-text text-slate-technical" style="color: rgba(255, 255, 255, 0.75);">We uphold the highest standards of data ethics, ensuring every model is transparent, auditable, and inherently secure.</p>
+                    </div>
+                    <div class="flex flex-col gap-md p-lg border rounded-xl" style="border-color: rgba(255,255,255,0.1); transition: background-color var(--transition-fast);" onmouseover="this.style.backgroundColor='rgba(255,255,255,0.05)'" onmouseout="this.style.backgroundColor='transparent'">
+                        <span class="material-symbols-outlined text-secondary-fixed-dim text-4xl" style="color: var(--color-coral-soft); font-size: 36px;">precision_manufacturing</span>
+                        <h4 class="feature-heading">Technical Rigor</h4>
+                        <p class="body-text text-slate-technical" style="color: rgba(255, 255, 255, 0.75);">Our solutions are built on mathematically sound architectures, avoiding the fragility of common consumer-grade tools.</p>
+                    </div>
+                    <div class="flex flex-col gap-md p-lg border rounded-xl" style="border-color: rgba(255,255,255,0.1); transition: background-color var(--transition-fast);" onmouseover="this.style.backgroundColor='rgba(255,255,255,0.05)'" onmouseout="this.style.backgroundColor='transparent'">
+                        <span class="material-symbols-outlined text-secondary-fixed-dim text-4xl" style="color: var(--color-coral-soft); font-size: 36px;">hub</span>
+                        <h4 class="feature-heading">Scalable Resilience</h4>
+                        <p class="body-text text-slate-technical" style="color: rgba(255, 255, 255, 0.75);">We design for the long tail, ensuring our systems perform under the stress of global-scale enterprise demands.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Global Ecosystem Section -->
+        <section class="section-padding container">
+            <div class="mb-xxl">
+                <span class="mono-label text-slate-technical mb-md block tracking-[0.28px]">NETWORK INFRASTRUCTURE</span>
+                <h2 class="section-heading text-primary tight-tracking">Global Ecosystem</h2>
+                <p class="body-large text-on-surface-variant mt-lg" style="max-width: 640px;">A distributed intelligence fabric powered by strategic infrastructure and research alliances.</p>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-xl">
+                
+                <!-- Ecosystem Card 1 -->
+                <div class="p-xl border border-hairline rounded-xl bg-surface-container-lowest flex flex-col justify-between" style="min-height: 240px; transition: all var(--transition-normal);" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 20px 25px -5px rgba(0,0,0,0.05)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                    <div class="flex flex-col gap-sm">
+                        <span class="material-symbols-outlined text-secondary" style="font-size: 36px; margin-bottom: var(--spacing-sm);">cloud_sync</span>
+                        <h4 class="feature-heading text-primary">Cloud Integrations</h4>
+                        <p class="body-text text-on-surface-variant">Seamless deployment across AWS, Azure, and GCP with sovereign data residency protocols.</p>
+                    </div>
+                    <div class="pt-md border-t border-hairline" style="margin-top: var(--spacing-xl);">
+                        <span class="mono-label text-micro text-slate-technical">STATUS: ACTIVE // V2.4</span>
+                    </div>
+                </div>
+
+                <!-- Ecosystem Card 2 -->
+                <div class="p-xl border border-hairline rounded-xl bg-surface-container-lowest flex flex-col justify-between" style="min-height: 240px; transition: all var(--transition-normal);" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 20px 25px -5px rgba(0,0,0,0.05)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                    <div class="flex flex-col gap-sm">
+                        <span class="material-symbols-outlined text-secondary" style="font-size: 36px; margin-bottom: var(--spacing-sm);">hub</span>
+                        <h4 class="feature-heading text-primary">Research Hubs</h4>
+                        <p class="body-text text-on-surface-variant">Collaborative nodes in Zurich, Singapore, and Palo Alto focused on neural architecture search.</p>
+                    </div>
+                    <div class="pt-md border-t border-hairline" style="margin-top: var(--spacing-xl);">
+                        <span class="mono-label text-micro text-slate-technical">NODES: 12 // GLOBAL</span>
+                    </div>
+                </div>
+
+                <!-- Ecosystem Card 3 -->
+                <div class="p-xl border border-hairline rounded-xl bg-surface-container-lowest flex flex-col justify-between" style="min-height: 240px; transition: all var(--transition-normal);" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 20px 25px -5px rgba(0,0,0,0.05)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                    <div class="flex flex-col gap-sm">
+                        <span class="material-symbols-outlined text-secondary" style="font-size: 36px; margin-bottom: var(--spacing-sm);">security</span>
+                        <h4 class="feature-heading text-primary">Infrastructure Partners</h4>
+                        <p class="body-text text-on-surface-variant">Hardware-level security integration with leading silicon providers for zero-knowledge compute.</p>
+                    </div>
+                    <div class="pt-md border-t border-hairline" style="margin-top: var(--spacing-xl);">
+                        <span class="mono-label text-micro text-slate-technical">PROTOCOL: ZK-PROOF // L1</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="footer-placeholder">
-        <!-- Universal Dark Footer -->
+    <!-- Footer -->
+    <footer class="border-t border-hairline bg-primary text-white py-xxl" aria-label="Footer Navigation" style="border-top-color: rgba(255,255,255,0.1);">
+        <div class="container">
+            <div class="grid grid-cols-4 gap-xl">
+                <div class="flex flex-col gap-md">
+                    <span class="nav-logo text-white" style="font-size: 24px; color: #ffffff;">Aether AI</span>
+                    <p class="body-text text-muted-slate" style="max-width: 240px;">
+                        Enterprise Intelligence For The Next Generation Of Business.
+                    </p>
+                </div>
+                <div class="flex flex-col gap-md">
+                    <h5 class="mono-label text-white font-bold" style="color: #ffffff;">Company</h5>
+                    <ul class="flex flex-col gap-sm" style="list-style: none;">
+                        <li><a href="about.html" class="body-text text-muted-slate hover:text-white">Our Story</a></li>
+                        <li><a href="about.html" class="body-text text-muted-slate hover:text-white">Careers</a></li>
+                        <li><a href="about.html" class="body-text text-muted-slate hover:text-white">Press</a></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-md">
+                    <h5 class="mono-label text-white font-bold" style="color: #ffffff;">Resources</h5>
+                    <ul class="flex flex-col gap-sm" style="list-style: none;">
+                        <li><a href="services.html" class="body-text text-muted-slate hover:text-white">Research Labs</a></li>
+                        <li><a href="services.html" class="body-text text-muted-slate hover:text-white">Documentation</a></li>
+                        <li><a href="services.html" class="body-text text-muted-slate hover:text-white">API Status</a></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-md">
+                    <h5 class="mono-label text-white font-bold" style="color: #ffffff;">Contact</h5>
+                    <ul class="flex flex-col gap-sm" style="list-style: none;">
+                        <li><a href="contact.html" class="body-text text-muted-slate hover:text-white">Institutional Sales</a></li>
+                        <li><a href="contact.html" class="body-text text-muted-slate hover:text-white">Media Inquiry</a></li>
+                        <li><a href="contact.html" class="body-text text-muted-slate hover:text-white">General Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-4 gap-xl pt-xl mt-xxl border-t" style="border-top-color: rgba(255, 255, 255, 0.1);">
+                <div class="col-span-12 flex justify-between items-center gap-md">
+                    <p class="body-text text-micro text-muted-slate">© 2026 Aether AI. Enterprise Intelligence For The Next Generation.</p>
+                    <div class="flex gap-xl" style="font-family: var(--font-body); font-size: 12px; color: var(--color-muted-slate);">
+                        <a href="about.html" class="hover:text-white">Privacy Policy</a>
+                        <a href="about.html" class="hover:text-white">Terms of Service</a>
+                        <a href="about.html" class="hover:text-white">Ethics Charter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- JavaScript Modules -->

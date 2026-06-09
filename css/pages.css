@@ -1,7 +1,222 @@
 /* ==========================================================================
-   Aether AI - Page-Specific Customizations (pages.css)
-   Purpose: Specific layout shifts or custom page overrides that only apply to 
-            single page sections (e.g. Home hero animations, Leadership grid).
+   Aether AI - Page Specific CSS (Custom layouts per page)
    ========================================================================== */
 
-/* Add page specific stylings here */
+/* 1. Global Page Offset */
+main.page-main {
+    padding-top: 72px; /* Navigation height */
+}
+
+/* 2. Home Page */
+/* Hero Section */
+.home-hero {
+    padding-top: 100px;
+    padding-bottom: var(--spacing-section);
+}
+
+.hero-media-wrapper {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--color-hairline);
+    background-color: var(--color-canvas);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+/* Stats Section */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--spacing-xl);
+    text-align: center;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .stats-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+/* Home Success / Final CTA Card */
+.home-cta-card {
+    background-color: var(--color-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xxl);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.home-cta-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 256px;
+    height: 256px;
+    background-color: rgba(0, 60, 51, 0.15); /* secondary/10 */
+    border-radius: var(--radius-full);
+    filter: blur(40px);
+    margin-right: -128px;
+    margin-top: -128px;
+}
+
+.home-cta-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 256px;
+    height: 256px;
+    background-color: rgba(65, 126, 248, 0.15); /* on-tertiary-container/10 */
+    border-radius: var(--radius-full);
+    filter: blur(40px);
+    margin-left: -128px;
+    margin-mb: -128px;
+}
+
+/* 3. About Page */
+.about-hero {
+    padding-top: var(--spacing-section);
+    padding-bottom: var(--spacing-section);
+}
+
+.leadership-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+}
+
+@media (min-width: 768px) {
+    .leadership-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.leader-node-img {
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-hairline);
+    background-color: var(--color-canvas);
+}
+
+.leader-node-img img {
+    width: 100%;
+    height: 100%;
+    object-cover: cover;
+    transition: transform var(--transition-slow);
+}
+
+.leadership-grid .group:hover .leader-node-img img {
+    transform: scale(1.05);
+}
+
+/* 4. Services Page */
+.process-step-num {
+    font-family: var(--font-mono);
+    font-size: 48px;
+    color: var(--color-hairline);
+    line-height: 1;
+    transition: color var(--transition-normal);
+}
+
+.process-step:hover .process-step-num {
+    color: var(--color-primary);
+}
+
+.service-industries-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+}
+
+@media (min-width: 640px) {
+    .service-industries-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .service-industries-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+.service-industry-card {
+    background-color: rgba(27, 79, 69, 0.1); /* on-secondary-fixed-variant/10 */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: var(--spacing-xxl);
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    height: 100%;
+}
+
+/* 5. Contact Page */
+.contact-channel-row {
+    padding: var(--spacing-lg) 0;
+    border-bottom: 1px solid var(--color-hairline);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform var(--transition-normal);
+    cursor: pointer;
+}
+
+.contact-channel-row:hover {
+    transform: translateY(-2px);
+}
+
+.location-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--color-hairline);
+    transition: transform var(--transition-normal);
+    cursor: pointer;
+}
+
+.location-card:hover {
+    transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+    .location-card {
+        border-bottom: none;
+    }
+}
+
+/* 6. 404 Error Page */
+.error-page-wrapper {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--spacing-section) var(--spacing-lg);
+}
+
+.error-content {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.error-title-huge {
+    font-family: var(--font-display);
+    font-size: 120px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--color-primary);
+    letter-spacing: -0.05em;
+}

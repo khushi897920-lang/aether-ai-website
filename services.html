@@ -1,36 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | Aether AI</title>
+    <title>Aether AI | Services</title>
     
     <!-- CSS Architecture -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/pages.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Explore Aether AI services including Custom AI Solutions, Enterprise Automation, and AI Strategy aligned with data privacy.">
 </head>
-<body>
-    <!-- 
-      Aether AI - Services Page Template
-      Purpose: Showcases custom AI modeling, cloud scaling capabilities, process timeline steps, and service FAQs.
-    -->
-    <header class="header-placeholder">
-        <!-- Navigation Header -->
-    </header>
+<body class="bg-surface text-ink">
 
-    <main id="main-content">
-        <!-- Services sections: Capability list, Timeline, FAQs accordion will go here -->
+    <!-- Navigation Header -->
+    <nav class="nav-container" aria-label="Main Navigation">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" id="nav-logo-link">Aether AI</a>
+            
+            <div class="nav-links" id="desktop-nav-links">
+                <a href="index.html" class="nav-link" id="nav-home">Home</a>
+                <a href="about.html" class="nav-link" id="nav-about">About</a>
+                <a href="services.html" class="nav-link active" id="nav-services">Services</a>
+                <a href="contact.html" class="nav-link" id="nav-contact">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-md">
+                <a href="contact.html" class="btn-primary" id="nav-cta-btn">Request Demo</a>
+                
+                <!-- Hamburger Trigger for Mobile -->
+                <button class="hamburger" aria-label="Toggle menu" id="mobile-nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+
+    <!-- Mobile Navigation Drawer -->
+    <aside class="mobile-drawer" id="mobile-drawer-container">
+        <nav class="mobile-drawer-links" aria-label="Mobile Navigation">
+            <a href="index.html" class="mobile-drawer-link" id="mob-nav-home">Home</a>
+            <a href="about.html" class="mobile-drawer-link" id="mob-nav-about">About</a>
+            <a href="services.html" class="mobile-drawer-link active" id="mob-nav-services">Services</a>
+            <a href="contact.html" class="mobile-drawer-link" id="mob-nav-contact">Contact</a>
+        </nav>
+        <a href="contact.html" class="btn-primary" style="margin-top: auto; text-align: center;">Request Demo</a>
+    </aside>
+
+    <main class="page-main">
+        
+        <!-- Hero Section -->
+        <section class="section container">
+            <div class="flex flex-col gap-md">
+                <span class="mono-label text-slate-technical">Capabilities</span>
+                <h1 class="hero-headline text-primary max-w-4xl">
+                    AI Services Designed For Modern Organizations
+                </h1>
+            </div>
+        </section>
+
+        <!-- Services Grid -->
+        <section class="section bg-surface-container-low">
+            <div class="container">
+                <div class="grid grid-cols-3 gap-xl">
+                    
+                    <!-- AI Strategy -->
+                    <div class="service-card" id="serv-strategy">
+                        <span class="material-symbols-outlined text-primary text-3xl">architecture</span>
+                        <h3 class="card-heading text-primary">AI Strategy</h3>
+                        <p class="body-text text-on-surface-variant">Defining high-impact roadmaps and architectural foundations to align enterprise goals with generative possibilities.</p>
+                        <div class="service-card-footer">SERV_01</div>
+                    </div>
+
+                    <!-- Custom AI Solutions -->
+                    <div class="service-card" id="serv-custom">
+                        <span class="material-symbols-outlined text-primary text-3xl">developer_board</span>
+                        <h3 class="card-heading text-primary">Custom AI Solutions</h3>
+                        <p class="body-text text-on-surface-variant">Bespoke large language models and neural architectures tailored to your proprietary datasets and security requirements.</p>
+                        <div class="service-card-footer">SERV_02</div>
+                    </div>
+
+                    <!-- Enterprise Automation -->
+                    <div class="service-card" id="serv-automation">
+                        <span class="material-symbols-outlined text-primary text-3xl">precision_manufacturing</span>
+                        <h3 class="card-heading text-primary">Enterprise Automation</h3>
+                        <p class="body-text text-on-surface-variant">Integrating intelligent agents into legacy workflows to eliminate manual friction and scale operational efficiency.</p>
+                        <div class="service-card-footer">SERV_03</div>
+                    </div>
+
+                    <!-- Knowledge Management -->
+                    <div class="service-card" id="serv-knowledge">
+                        <span class="material-symbols-outlined text-primary text-3xl">database</span>
+                        <h3 class="card-heading text-primary">Knowledge Management</h3>
+                        <p class="body-text text-on-surface-variant">Converting siloed documents into active, searchable intelligence accessible through natural language interfaces.</p>
+                        <div class="service-card-footer">SERV_04</div>
+                    </div>
+
+                    <!-- AI Agent Development -->
+                    <div class="service-card" id="serv-agents">
+                        <span class="material-symbols-outlined text-primary text-3xl">smart_toy</span>
+                        <h3 class="card-heading text-primary">AI Agent Development</h3>
+                        <p class="body-text text-on-surface-variant">Autonomous agents designed to execute complex tasks, from customer support to real-time supply chain adjustments.</p>
+                        <div class="service-card-footer">SERV_05</div>
+                    </div>
+
+                    <!-- Data Intelligence -->
+                    <div class="service-card" id="serv-data">
+                        <span class="material-symbols-outlined text-primary text-3xl">analytics</span>
+                        <h3 class="card-heading text-primary">Data Intelligence</h3>
+                        <p class="body-text text-on-surface-variant">Extracting predictive insights from unstructured data to inform C-suite decision-making and market positioning.</p>
+                        <div class="service-card-footer">SERV_06</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="section container" id="process-section">
+            <div class="grid grid-cols-12 gap-xxl items-start process-grid">
+                <div class="col-span-4 sticky-top" style="top: 100px;">
+                    <h2 class="section-heading text-primary">How We Work</h2>
+                    <p class="body-large text-on-surface-variant mt-md" style="max-width: 320px;">A rigid, research-driven methodology for high-stakes AI deployment.</p>
+                </div>
+                
+                <div class="col-span-8 flex flex-col">
+                    
+                    <div class="process-step border-t border-hairline py-xxl flex gap-xl items-start" style="transition: border-color var(--transition-fast);" onmouseover="this.style.borderTopColor='var(--color-primary)'" onmouseout="this.style.borderTopColor=''">
+                        <span class="process-step-num">01</span>
+                        <div class="flex flex-col gap-sm">
+                            <h4 class="card-heading text-primary">Discovery & Audit</h4>
+                            <p class="body-text text-on-surface-variant" style="max-width: 600px;">Comprehensive technical assessment of current data infrastructure and organizational bottlenecks.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step border-t border-hairline py-xxl flex gap-xl items-start" style="transition: border-color var(--transition-fast);" onmouseover="this.style.borderTopColor='var(--color-primary)'" onmouseout="this.style.borderTopColor=''">
+                        <span class="process-step-num">02</span>
+                        <div class="flex flex-col gap-sm">
+                            <h4 class="card-heading text-primary">Prototype Development</h4>
+                            <p class="body-text text-on-surface-variant" style="max-width: 600px;">Rapid iteration of custom models within a sandbox environment to validate performance metrics.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step border-t border-hairline py-xxl flex gap-xl items-start" style="transition: border-color var(--transition-fast);" onmouseover="this.style.borderTopColor='var(--color-primary)'" onmouseout="this.style.borderTopColor=''">
+                        <span class="process-step-num">03</span>
+                        <div class="flex flex-col gap-sm">
+                            <h4 class="card-heading text-primary">Scalable Integration</h4>
+                            <p class="body-text text-on-surface-variant" style="max-width: 600px;">Seamless rollout into production environments with a focus on security, compliance, and user adoption.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step border-y border-hairline py-xxl flex gap-xl items-start" style="transition: border-color var(--transition-fast); border-bottom: 1px solid var(--color-hairline);" onmouseover="this.style.borderTopColor='var(--color-primary)'; this.style.borderBottomColor='var(--color-primary)'" onmouseout="this.style.borderTopColor=''; this.style.borderBottomColor=''">
+                        <span class="process-step-num">04</span>
+                        <div class="flex flex-col gap-sm">
+                            <h4 class="card-heading text-primary">Ongoing Governance</h4>
+                            <p class="body-text text-on-surface-variant" style="max-width: 600px;">Continuous monitoring and optimization to ensure AI systems remain performant as new data emerges.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industries Section -->
+        <section class="section bg-deep-green text-white">
+            <div class="container">
+                <div class="flex flex-row items-end justify-between gap-lg mb-xxl flex-row-mobile-stack">
+                    <h2 class="section-heading">Industries We Serve</h2>
+                    <p class="body-text text-white opacity-80" style="max-width: 360px;">Specialized intelligence for highly regulated and complex sectors.</p>
+                </div>
+                
+                <div class="service-industries-grid">
+                    
+                    <div class="service-industry-card">
+                        <span class="mono-label text-white opacity-60">FIN_INT</span>
+                        <h5 class="card-heading" style="font-size: 24px;">Finance</h5>
+                        <p class="body-text text-white opacity-80">Algorithmic trading risk and fraud detection.</p>
+                    </div>
+
+                    <div class="service-industry-card">
+                        <span class="mono-label text-white opacity-60">HEA_INT</span>
+                        <h5 class="card-heading" style="font-size: 24px;">Healthcare</h5>
+                        <p class="body-text text-white opacity-80">Clinical data processing and diagnostics assistance.</p>
+                    </div>
+
+                    <div class="service-industry-card">
+                        <span class="mono-label text-white opacity-60">GOV_INT</span>
+                        <h5 class="card-heading" style="font-size: 24px;">Govt</h5>
+                        <p class="body-text text-white opacity-80">Secure infrastructure and public service automation.</p>
+                    </div>
+
+                    <div class="service-industry-card">
+                        <span class="mono-label text-white opacity-60">TEC_INT</span>
+                        <h5 class="card-heading" style="font-size: 24px;">Tech</h5>
+                        <p class="body-text text-white opacity-80">DevOps automation and generative code suites.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Accordion Section -->
+        <section class="section container">
+            <h2 class="section-heading text-primary mb-xxl text-center">Service Inquiries</h2>
+            <div class="faq-accordion-container" id="faq-accordions-group">
+                
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <button class="faq-trigger" aria-controls="faq-panel-1">
+                        <span class="faq-title">Do you work with existing tech stacks?</span>
+                        <span class="material-symbols-outlined faq-icon">expand_more</span>
+                    </button>
+                    <div class="faq-panel" id="faq-panel-1">
+                        <div class="faq-content">
+                            Yes. Aether AI is designed to integrate with modern enterprise infrastructures, including AWS, Azure, and Google Cloud, ensuring seamless connectivity via robust APIs.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <button class="faq-trigger" aria-controls="faq-panel-2">
+                        <span class="faq-title">How do you ensure data privacy?</span>
+                        <span class="material-symbols-outlined faq-icon">expand_more</span>
+                    </button>
+                    <div class="faq-panel" id="faq-panel-2">
+                        <div class="faq-content">
+                            We utilize on-premise deployment options and zero-knowledge data processing protocols. Your data never leaves your secure environment during model training or inference.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <button class="faq-trigger" aria-controls="faq-panel-3">
+                        <span class="faq-title">What is the typical timeline for deployment?</span>
+                        <span class="material-symbols-outlined faq-icon">expand_more</span>
+                    </button>
+                    <div class="faq-panel" id="faq-panel-3">
+                        <div class="faq-content">
+                            Standard implementation cycles range from 8 to 14 weeks, depending on the complexity of the data sources and the specific performance requirements of the models.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <button class="faq-trigger" aria-controls="faq-panel-4">
+                        <span class="faq-title">Do you offer post-launch support?</span>
+                        <span class="material-symbols-outlined faq-icon">expand_more</span>
+                    </button>
+                    <div class="faq-panel" id="faq-panel-4">
+                        <div class="faq-content">
+                            Every deployment includes a 12-month maintenance contract that covers model retraining, performance auditing, and technical troubleshooting as your organizational needs evolve.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="footer-placeholder">
-        <!-- Universal Dark Footer -->
+    <!-- Footer -->
+    <footer class="border-t border-hairline bg-primary text-white py-xxl" aria-label="Footer Navigation" style="border-top-color: rgba(255,255,255,0.1);">
+        <div class="container">
+            <div class="grid grid-cols-4 gap-xl">
+                <div class="flex flex-col gap-md">
+                    <span class="nav-logo text-white" style="font-size: 24px; color: #ffffff;">Aether AI</span>
+                    <p class="body-text text-muted-slate" style="max-width: 240px;">
+                        Enterprise Intelligence For The Next Generation Of Business.
+                    </p>
+                </div>
+                <div class="flex flex-col gap-md">
+                    <h5 class="mono-label text-white font-bold" style="color: #ffffff;">Company</h5>
+                    <ul class="flex flex-col gap-sm" style="list-style: none;">
+                        <li><a href="about.html" class="body-text text-muted-slate hover:text-white">Our Mission</a></li>
+                        <li><a href="about.html" class="body-text text-muted-slate hover:text-white">Research Lab</a></li>
+                        <li><a href="about.html" class="body-text text-muted-slate hover:text-white">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-md">
+                    <h5 class="mono-label text-white font-bold" style="color: #ffffff;">Resources</h5>
+                    <ul class="flex flex-col gap-sm" style="list-style: none;">
+                        <li><a href="services.html" class="body-text text-muted-slate hover:text-white">Documentation</a></li>
+                        <li><a href="services.html" class="body-text text-muted-slate hover:text-white">API Reference</a></li>
+                        <li><a href="services.html" class="body-text text-muted-slate hover:text-white">System Status</a></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-md">
+                    <h5 class="mono-label text-white font-bold" style="color: #ffffff;">Legal</h5>
+                    <ul class="flex flex-col gap-sm" style="list-style: none;">
+                        <li><a href="about.html" class="body-text text-muted-slate hover:text-white">Privacy Policy</a></li>
+                        <li><a href="about.html" class="body-text text-muted-slate hover:text-white">Terms of Service</a></li>
+                        <li><a href="about.html" class="body-text text-muted-slate hover:text-white">Ethics Charter</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-4 gap-xl pt-xl mt-xxl border-t" style="border-top-color: rgba(255, 255, 255, 0.1);">
+                <div class="col-span-12 flex justify-between items-center gap-md">
+                    <p class="body-text text-micro text-muted-slate">© 2026 Aether AI. Enterprise Intelligence For The Next Generation.</p>
+                    <div class="flex gap-xl" style="font-family: var(--font-body); font-size: 12px; color: var(--color-muted-slate);">
+                        <a href="about.html" class="hover:text-white">Privacy Policy</a>
+                        <a href="about.html" class="hover:text-white">Terms of Service</a>
+                        <a href="about.html" class="hover:text-white">Ethics Charter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- JavaScript Modules -->
