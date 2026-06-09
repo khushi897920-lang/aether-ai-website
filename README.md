@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <a href="#" style="display: inline-block; background-color: #4ade80; color: #0d1f1a; padding: 12px 24px; font-weight: bold; border-radius: 6px; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; box-shadow: 0 4px 15px rgba(74, 222, 128, 0.3); border: 2px solid #4ade80;">🚀 View Live Demo</a>
+  <a href="https://aether-ai-website.vercel.app/" style="display: inline-block; background-color: #4ade80; color: #0d1f1a; padding: 12px 24px; font-weight: bold; border-radius: 6px; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; box-shadow: 0 4px 15px rgba(74, 222, 128, 0.3); border: 2px solid #4ade80;">🚀 View Live Demo</a>
 </p>
 
 ---
