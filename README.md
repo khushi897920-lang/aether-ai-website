@@ -28,7 +28,7 @@
   <table>
     <tr>
       <td align="center" width="50%">
-        <img src="https://placehold.co/800x500/0d1f1a/4ade80?text=Home+Page+Desktop+View" alt="Home Page" width="100%"><br>
+        <img src="screenshots/home.png" alt="Home Page" width="100%"><br>
         <sub><b>Home Page</b> — Enterprise portal showcasing platform capabilities and metrics.</sub>
       </td>
       <td align="center" width="50%">
@@ -38,7 +38,7 @@
     </tr>
     <tr>
       <td align="center" width="50%">
-        <img src="https://placehold.co/800x500/0d1f1a/4ade80?text=Services+Page+Desktop+View" alt="Services Page" width="100%"><br>
+        <img src="screenshots/services.png" alt="Services Page" width="100%"><br>
         <sub><b>Services Page</b> — Platform infrastructure offerings, workflow timeline, and detailed FAQ accordion.</sub>
       </td>
       <td align="center" width="50%">
