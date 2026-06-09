@@ -1,0 +1,16 @@
+# Dependency directories
+node_modules/
+
+# OS metadata files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE configuration files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp

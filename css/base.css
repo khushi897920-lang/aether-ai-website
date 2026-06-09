@@ -1,0 +1,35 @@
+/* ==========================================================================
+   Aether AI - Base Styles (base.css)
+   Purpose: Holds design tokens (variables), font face imports, global body 
+            resets, scrollbars, and key accessibility focus-visible rings.
+   ========================================================================== */
+
+:root {
+    /* Color Tokens */
+    --color-primary: #17171c;
+    --color-deep-green: #003c33;
+    --color-coral: #ff7759;
+    --color-canvas: #ffffff;
+    --color-soft-stone: #eeece7;
+    --color-hairline: #d9d9dd;
+    --color-slate-technical: #75758a;
+    --color-muted-slate: #93939f;
+    --color-on-primary: #ffffff;
+    --color-on-dark: #ffffff;
+
+    /* Spacing System */
+    --spacing-xs: 6px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+    --spacing-xl: 24px;
+    --spacing-xxl: 32px;
+    --spacing-section: 80px;
+
+    /* Typography scale */
+    --font-display: 'Hanken Grotesk', system-ui, sans-serif;
+    --font-body: 'Hanken Grotesk', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Add core baseline HTML resets here */
