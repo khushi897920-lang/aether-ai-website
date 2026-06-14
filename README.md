@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://placehold.co/120x120/0d1f1a/4ade80?text=Aether+AI" alt="Aether AI Logo" width="120" height="120" style="border-radius: 20px;">
-</p>
-
 <h1 align="center">Aether AI</h1>
 
 <p align="center">
