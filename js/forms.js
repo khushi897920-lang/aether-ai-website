@@ -2,6 +2,9 @@
    Aether AI - Form Validation and State Handler JavaScript Module
    ========================================================================== */
 
+const WEB3FORMS_ACCESS_KEY = 'b447b4be-743a-4c6d-bf28-a9cc1f01115a';
+const DESTINATION_EMAIL = 'aiaether92@gmail.com';
+
 document.addEventListener('DOMContentLoaded', () => {
     initContactFormValidation();
     initNewsletterValidation();
@@ -69,7 +72,7 @@ function initNewsletterValidation() {
             return;
         }
 
-        // Simulating success
+        // Simulating success & sending to destination email
         const btn = form.querySelector('.footer-newsletter-btn');
         const icon = btn.querySelector('.material-symbols-outlined');
         const originalIcon = icon.textContent;
@@ -78,7 +81,23 @@ function initNewsletterValidation() {
         icon.classList.add('animate-spin');
         btn.disabled = true;
 
-        setTimeout(() => {
+        // Send newsletter subscriber to Web3Forms API
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                access_key: WEB3FORMS_ACCESS_KEY,
+                subject: 'New Newsletter Subscription - Aether AI',
+                from_name: 'Aether AI Website',
+                email: email,
+                timestamp: new Date().toLocaleString()
+            })
+        }).catch(() => {
+            // Silently handle if offline or blocked
+        }).finally(() => {
             icon.classList.remove('animate-spin');
             icon.textContent = 'check';
             showSnackbar('Thank you for subscribing!', 'success');
@@ -88,7 +107,7 @@ function initNewsletterValidation() {
                 icon.textContent = originalIcon;
                 btn.disabled = false;
             }, 3000);
-        }, 1200);
+        });
     });
 }
 
@@ -149,7 +168,7 @@ function validateField(field) {
 }
 
 /**
- * Handles simulated successful submission for the contact form.
+ * Handles submission for the contact form, sending data to the destination email via Web3Forms.
  * @param {HTMLFormElement} form 
  */
 function handleFormSubmitSuccess(form) {
@@ -162,22 +181,72 @@ function handleFormSubmitSuccess(form) {
     btn.innerHTML = '<span class="material-symbols-outlined animate-spin" style="margin-right:8px;">progress_activity</span> Sending Request...';
     btn.disabled = true;
 
-    // Simulate Network Request
-    setTimeout(() => {
-        // Success State
-        btn.innerHTML = '<span class="material-symbols-outlined" style="margin-right:8px;">check_circle</span> Request Received';
-        btn.style.backgroundColor = 'var(--color-deep-green)';
+    // Gather form payload
+    const formData = new FormData(form);
+    const payload = {};
+    formData.forEach((value, key) => {
+        payload[key] = value;
+    });
+
+    payload['access_key'] = WEB3FORMS_ACCESS_KEY;
+    payload['from_name'] = 'Aether AI Enterprise Portal';
+    payload['subject'] = `New Customer Inquiry: ${payload.subject || 'Enterprise'} (${payload.name || 'Anonymous'})`;
+    payload['timestamp'] = new Date().toLocaleString();
+
+    // Send to destination email via Web3Forms API
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    })
+    .then(async response => {
+        const data = await response.json();
+        if (response.status === 200 && data.success) {
+            // Success State
+            btn.innerHTML = '<span class="material-symbols-outlined" style="margin-right:8px;">check_circle</span> Request Received';
+            btn.style.backgroundColor = 'var(--color-deep-green)';
+            
+            showSnackbar('Inquiry sent successfully! Our team will contact you shortly.', 'success');
+            form.reset();
+
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                btn.style.backgroundColor = '';
+            }, 3500);
+        } else {
+            throw new Error(data.message || 'Web3Forms submission failed');
+        }
+    })
+    .catch(err => {
+        console.warn('Web3Forms submission issue, activating mailto fallback:', err);
         
-        showSnackbar('Request submitted successfully. Our units will contact you shortly.', 'success');
+        // Graceful fallback to mailto dispatch so customer message is never lost
+        const subjectEnc = encodeURIComponent(`[Aether AI Contact] ${payload.subject || 'Enterprise Implementation'}`);
+        const bodyEnc = encodeURIComponent(
+            `Name: ${payload.name || 'N/A'}\n` +
+            `Company: ${payload.company || 'N/A'}\n` +
+            `Email: ${payload.email || 'N/A'}\n` +
+            `Phone: ${payload.phone || 'N/A'}\n\n` +
+            `Message:\n${payload.message || ''}\n`
+        );
+        
+        window.location.href = `mailto:${DESTINATION_EMAIL}?subject=${subjectEnc}&body=${bodyEnc}`;
+
+        btn.innerHTML = '<span class="material-symbols-outlined" style="margin-right:8px;">check_circle</span> Mail Client Opened';
+        btn.style.backgroundColor = 'var(--color-deep-green)';
+        showSnackbar(`Opening email client to reach ${DESTINATION_EMAIL}`, 'success');
         form.reset();
 
         setTimeout(() => {
-            // Restore Original Button
             btn.innerHTML = originalText;
             btn.disabled = false;
             btn.style.backgroundColor = '';
-        }, 3000);
-    }, 1500);
+        }, 3500);
+    });
 }
 
 /**
